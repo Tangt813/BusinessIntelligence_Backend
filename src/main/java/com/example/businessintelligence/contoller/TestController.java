@@ -2,6 +2,7 @@ package com.example.businessintelligence.contoller;
 
 import cn.dev33.satoken.util.SaResult;
 import com.example.businessintelligence.service.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,15 +18,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-    private final TestService testService;
-
-    public TestController(TestService testService) {
-        this.testService = testService;
-    }
+    @Autowired
+    private TestService testService;
 
     @GetMapping("test1")
     public SaResult test1()
     {
         return SaResult.code(200).setData(testService.test1());
     }
+
+//    @GetMapping("test2")
+//    public SaResult test2()
+//    {
+//        return SaResult.code(200).setData(testService.randomPerson());
+//    }
 }

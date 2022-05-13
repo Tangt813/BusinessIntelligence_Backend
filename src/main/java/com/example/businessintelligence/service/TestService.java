@@ -1,6 +1,9 @@
 package com.example.businessintelligence.service;
 
+import org.neo4j.driver.types.Path;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @ClassName: TestService
